@@ -16,8 +16,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 
-const Employees = require('./models/employee');
+const Employees = require('./models/employee'); // get employee model from models directory
 const { CONSOLE_APPENDER } = require('karma/lib/constants');
+const EmployeeApi = require('./routes/employee-api'); // import employee API
 
 /**
  * App configurations
@@ -51,74 +52,10 @@ mongoose.connect(conn, {
   console.log(`MongoDB Error: ${err.message}`)
 }); // end mongoose connection
 
-/*
- * FindEmployees
- * Test db connection; pulls up all employees
+/**
+ * APIs go here
  */
-// Testing connection to database and employee connection
-app.get('/api/employees', async(req, res) => {
-  try {
-    Employees.find({}, function(err, employees) {
-      if (err) {
-        console.log(err);
-
-        res.status(500).send( {
-          'message': 'Internal server error'
-        })
-      } else {
-        console.log(employees);
-
-        res.json(employees)
-      }
-    })
-  } catch (e) {
-    console.log(e);
-
-    res.status(500).send( {
-      'message': 'Internal server error'
-    })
-  }
-})
-
-/*
- * FindEmployeeById
- * Pull up employees by employeeId
- */
-app.get('/api/employees/:employeeId', async(req, res) => {
-  try {
-    /**
-     * Use the mongoose emplyee model to query MongoDB Atlas by employeeId
-     */
-    Employees.findOne({ employeeId: req.params.employeeId }, function(err, employee) {
-      /**
-       * If there is a database level error, handle by returning a server 500 error
-       */
-      if (err) {
-        console.log(err);
-
-        res.status(500).send({
-          'message': 'Internal server error'
-        })
-      } else {
-        /**
-         * If there are no database level errors, return employee object
-         * {}
-         */
-        console.log(employee)
-
-        res.json(employee)
-      }
-    })
-  } catch (e) {
-    /**
-     * Catch any potential errors that we didn't prepare for
-     */
-    console.log(e);
-    res.status(500).send({
-      'message':'Internal server error!'
-    })
-  }
-})
+app.use('/api/employees', EmployeeApi);
 
 /**
  * Create and start server
