@@ -21,8 +21,12 @@
           [formControl]="form.controls['employeeId']"
           placeholder="Employee ID" />
 
-          <mat-error *ngIf="form.controls['employeeId'].hasError('required')">
+          <mat-error *ngIf="form.controls['employeeId'].hasError('required')"> <!-- Add .touched() method -->
             You must enter an employee ID
+          </mat-error>
+
+          <mat-error *ngIf="form.controls['employeeId'].hasError('pattern')">
+            You must enter an numerical value
           </mat-error>
 
         </mat-form-field>
