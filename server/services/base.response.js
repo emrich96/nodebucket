@@ -1,3 +1,10 @@
+/**
+ * Title: base.response.js
+ * Author: Emily Richter
+ * Date: 4 October 2020
+ * Description: Sprint 2 -- base message template
+ */
+
 class BaseResponse {
   constructor(httpCode, message, data) {
     this.httpCode = httpCode;
