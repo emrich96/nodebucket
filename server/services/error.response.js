@@ -1,3 +1,10 @@
+/**
+ * Title: error.response.js
+ * Author: Emily Richter
+ * Date: 4 October 2020
+ * Description: Sprint 2 -- error message template
+ */
+
 class ErrorResponse {
   constructor(httpCode, message, data) {
     this.httpCode = httpCode;
