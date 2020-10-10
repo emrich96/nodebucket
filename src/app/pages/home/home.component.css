@@ -12,7 +12,7 @@
     font-size: 14px;
   }
 
-  
+
 /*
   Angular cdk drag and drop specific styling
 */
@@ -35,4 +35,41 @@
 
 .cdk-drop-list-dragging .task-card:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/**
+ * Task management page custom styles
+ */
+.task-container {
+  width: 35%;
+  margin: 0 auto;
+}
+
+.create-task-container {
+  width: 35%;
+  margin: 0 auto;
+}
+
+.task-list {
+  border: 1px solid #ccc;
+  min-height: 68px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.task-card {
+  cursor: move;
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  min-height: 68px;
+  height: 68px;
+  font-size: 14px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-options-menu {
+  margin-top: -15px;
 }
