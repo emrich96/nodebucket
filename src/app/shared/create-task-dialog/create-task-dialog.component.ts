@@ -1,3 +1,10 @@
+/**
+ * Title: create-task-dialog.component.ts
+ * Author: Emily Richter
+ * Date: 7 October 2020
+ * Description: Sprint 3 -- dialog for createTask function in home component
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
