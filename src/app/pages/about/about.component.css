@@ -1,13 +1,8 @@
 .about-container {
   width: 80%;
-  padding-top: 30px;
   margin: 0 auto;
 }
 
-.about-card {
-  padding: 50px;
-}
-
-.title {
-  text-align: center;
+.section-start {
+  padding-top: 50px;
 }

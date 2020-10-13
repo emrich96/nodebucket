@@ -14,6 +14,7 @@
 // hue. Available color palettes: https://material.io/design/color/
 $nodebucket-primary: mat-palette($mat-blue-grey);
 $nodebucket-accent: mat-palette($mat-amber, A200, A100, A400);
+$background-color: map_get($mat-blue-grey, 50);
 
 // The warn palette is optional (defaults to red).
 $nodebucket-warn: mat-palette($mat-red);
@@ -28,8 +29,25 @@ $nodebucket-theme: mat-light-theme((
   )
 ));
 
+/**
+ * Tried to set a background color.
+ *Current "working" solution from StackOverflow doesn't work in Angular 10.
+ */
+/*
+$background: map-get($nodebucket-theme, background);
+$background: map_merge($background, (background: $background-color));
+$nodebucket-theme: map_merge($nodebucket-theme, (background: $background));
+*/
+//https://www.npmjs.com/package/sass-recursive-map-merge, and then:
+// NG10+ Have a nested `color` map.
+/*$palette-color: map-get($nodebucket-theme, color);
+$background: map-get($palette-color, background);
+$background: map_merge($background, (background: $background));
+$nodebucket-theme: map_merge($nodebucket-theme, (background: $background));
+$nodebucket-theme: recursive-map-merge($nodebucket-theme, (color: (background: $background)));
+*/
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($nodebucket-theme);
-
