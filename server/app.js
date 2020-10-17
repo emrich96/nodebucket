@@ -17,7 +17,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 const Employees = require('./models/employee'); // get employee model from models directory
-//const { CONSOLE_APPENDER } = require('karma/lib/constants');
+const { CONSOLE_APPENDER } = require('karma/lib/constants');
 const EmployeeApi = require('./routes/employee-api'); // import employee API
 
 /**

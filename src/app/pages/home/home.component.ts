@@ -11,7 +11,6 @@ import { TaskService } from 'src/app/shared/task.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { CookieService } from 'ngx-cookie-service';
 import { Employee } from 'src/app/shared/employee.interface';
-import { CommentStmt } from '@angular/compiler';
 import { Item } from 'src/app/shared/item.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateTaskDialogComponent } from 'src/app/shared/create-task-dialog/create-task-dialog.component';
