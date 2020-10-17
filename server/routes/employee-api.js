@@ -291,7 +291,7 @@ router.delete('/:employeeId/tasks/:taskId', async(req, res) => {
 
               const deleteDoneItemSuccessResponse = new BaseResponse('200', 'Removed item from the done list', updatedDoneItemEmployee);
 
-              res.json(updatedDoneItemEmployee.toObject())
+              res.json(deleteDoneItemSuccessResponse.toObject())
             }
           })
 
