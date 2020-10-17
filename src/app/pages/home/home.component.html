@@ -99,11 +99,11 @@
                       </div>
 
                       <div fxFlex fxLayoutAlign="end">
-                        <button [matMenuTriggerFor]="todoOptions" class="task-options-menu" mat-icon-button>
+                        <button [matMenuTriggerFor]="doneOptions" class="task-options-menu" mat-icon-button>
                           <mat-icon>more_horiz</mat-icon>
                         </button>
 
-                        <mat-menu #todoOptions="matMenu" x-position="before">
+                        <mat-menu #doneOptions="matMenu" x-position="before">
                           <button (click)="deleteTask(item._id)" mat-menu-item>
                             Remove
                           </button>
