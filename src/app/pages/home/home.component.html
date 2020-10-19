@@ -9,11 +9,13 @@
     </h1>
   </div>
 
+<!--  Old create task button
   <div fxFlex>
     <div class="create-task-container" fxLayout="column">
       <button mat-raised-button color="primary" (click)="openCreateTaskDialog()">Create Task</button>
     </div>
   </div>
+-->
 
   <br />
 
@@ -21,10 +23,20 @@
     <div fxLayout="row" fxLayoutGap="15px" class="task-container">
 
       <!-- todo -->
-      <div fxFlex>
-        <mat-card class="mat-elevation-z0">
+      <div fxFlex class="todo-column">
+        <mat-card class="mat-elevation-z3">
 
-          <mat-card-title>To do</mat-card-title>
+          <mat-card-header class="card-header">
+
+            <mat-card-title>To Do</mat-card-title>
+
+            <button mat-mini-fab aria-label="Add task" color="primary" (click)="openCreateTaskDialog()">
+              <mat-icon>add_task</mat-icon>
+            </button>
+
+          </mat-card-header>
+
+          <br />
 
           <mat-card-content>
             <div fxLayout="column"
@@ -48,7 +60,7 @@
 
                         <div fxFlex fxLayoutAlign="end">
                           <button [matMenuTriggerFor]="todoOptions" class="task-options-menu" mat-icon-button>
-                            <mat-icon>more_horiz</mat-icon>
+                            <mat-icon>more_vert</mat-icon>
                           </button>
 
                           <mat-menu #todoOptions="matMenu" x-position="before">
@@ -74,9 +86,13 @@
       <!-- done -->
       <div fxFlex>
 
-        <mat-card class="mat-elevation-z0">
+        <mat-card class="mat-elevation-z3">
 
-          <mat-card-title>Done</mat-card-title>
+          <mat-card-header class="card-header">
+            <mat-card-title>Done</mat-card-title>
+          </mat-card-header>
+
+          <br />
 
           <mat-card-content>
 
@@ -100,7 +116,7 @@
 
                       <div fxFlex fxLayoutAlign="end">
                         <button [matMenuTriggerFor]="doneOptions" class="task-options-menu" mat-icon-button>
-                          <mat-icon>more_horiz</mat-icon>
+                          <mat-icon>more_vert</mat-icon>
                         </button>
 
                         <mat-menu #doneOptions="matMenu" x-position="before">

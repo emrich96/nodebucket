@@ -41,13 +41,24 @@
  * Task management page custom styles
  */
 .task-container {
-  width: 35%;
+  width: 45%;
   margin: 0 auto;
 }
 
 .create-task-container {
-  width: 35%;
+  width: 50%;
   margin: 0 auto;
+}
+
+.todo-column {
+  padding-right: 50px;
+}
+
+.card-header {
+  height: 40px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .task-list {
@@ -71,5 +82,5 @@
 }
 
 .task-options-menu {
-  margin-top: -15px;
+  margin-top: -10px;
 }
